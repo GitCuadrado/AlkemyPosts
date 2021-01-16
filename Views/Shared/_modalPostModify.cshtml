@@ -1,0 +1,35 @@
+﻿<div class="modal fade" id="modalPostModify" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal--title">Modificar Post</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body__content">
+                    <div class="inputGroup item">
+                        <input id="titleMod" class="input" type="text" name="name" value="" required />
+                        <label class="title">Titulo...</label>
+
+                    </div>
+                    <div class="inputGroup item">
+                        <select id="selectCatMod" class="input">
+                            <option value="" disabled selected>Categoria...</option>
+                            <option value="Anuncio">Anuncio</option>
+                            <option value="Discusion">Discusion</option>
+                            <option value="Memes">Memes</option>
+                        </select>
+                    </div>
+                    <div class="inputGroup item">
+                        <textarea id="contMod" class="input" rows="10" name="comment" cols="40" required></textarea>
+                        <label class="title">Contenido...</label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="btnDefaultLine">Cancelar</a>
+                <a class="btnDefault btnModificar">Modificar</a>
+            </div>
+        </div>
+    </div>
+</div>

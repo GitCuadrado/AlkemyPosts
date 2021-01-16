@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@Html.Partial("_modalPostDetails")
+@Html.Partial("_modalPostAgregar")
+@Html.Partial("_modalPostModify")
+<div class="content">
+    <div class="content__header">
+        <p>Ultimos posts</p>
+    </div>
+    <div class="content__posts">
+
+    </div>
+</div>
+@section scripts{
+    <script>
+        window.onload = function () {
+            POST.init();
+        };
+
+    </script>
+
+}

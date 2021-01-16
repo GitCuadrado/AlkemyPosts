@@ -1,0 +1,39 @@
+﻿<div class="modal fade" id="modalPostAgregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal--title">Crear Post</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body__content">
+                    <div class="inputGroup item">
+                        <input id="title" class="input" type="text" name="name" value="" required/>
+                        <label class="title">Titulo...</label>
+
+                    </div>
+                    <div class="inputGroup item">
+                        <select id="selectCat" class="input">
+                            <option value="" disabled selected>Categoria...</option>
+                            <option value="Anuncio">Anuncio</option>
+                            <option value="Discusion">Discusion</option>
+                            <option value="Memes">Memes</option>
+                        </select>
+                    </div>
+                    <div class="inputGroup item">
+                        <textarea id="cont" class="input" rows="10" name="comment" cols="40" required></textarea>
+                        <label class="title">Contenido...</label>
+
+                    </div>
+                    @*<form id="upload" enctype="multipart/form-data" action="@Url.Action("UploadImg", "Post")" method="POST">
+                        <input type="file" name="fileUpload" id="fileUpload" size="23" /><br />
+                        <button>Upload!</button>
+                    </form>*@
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="btnDefaultLine">Cancelar</a>
+                <a class="btnDefault btnAgregar">Agregar</a>
+            </div>
+        </div>
+    </div>
+</div>
