@@ -1,18 +1,15 @@
-﻿using AlkemyPOSTS.Models.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace AlkemyPOSTS.Models.Post.ObtenerPost
+namespace AlkemyPOSTS.Models.Post.ListarPosts
 {
-    public class ObtenerPostResponse : StatusResponse
+    public class PostItemPreview
     {
         public int ID { get; set; }
         public string TITLE { get; set; }
-        public string CONTENT { get; set; }
         public string CATEGORIA { get; set; }
         public string FECHA_CREACION { get; set; }
-        public string IMAGEN { get; set; }
     }
 }

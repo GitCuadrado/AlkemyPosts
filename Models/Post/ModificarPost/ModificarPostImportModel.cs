@@ -11,5 +11,6 @@ namespace AlkemyPOSTS.Models.Post.ModificarPost
         public string CONTENT { get; set; }
         public string TITLE { get; set; }
         public string CATEGORIA { get; set; }
+        public string IMAGEN { get; set; }
     }
 }

@@ -125,6 +125,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="DataAccess\ConexionDB.cs" />
     <Compile Include="DataAccess\PostDataAccess.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -138,7 +139,7 @@
     <Compile Include="Models\Post\FiltrarPosts\FiltrarPostsImportModel.cs" />
     <Compile Include="Models\Post\FiltrarPosts\FiltrarPostsResponse.cs" />
     <Compile Include="Models\Post\ListarPosts\ListarPostsResponse.cs" />
-    <Compile Include="Models\Post\ListarPosts\PostItemPreview.cs" />
+    <Compile Include="Models\Post\PostItemPreview.cs" />
     <Compile Include="Models\Post\ModificarPost\ModificarPostImportModel.cs" />
     <Compile Include="Models\Post\ModificarPost\ModificarPostResponse.cs" />
     <Compile Include="Models\Post\ObtenerPost\ObtenerPostImportModel.cs" />
@@ -160,6 +161,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="resources\alkemy.png" />
+    <Content Include="resources\imagesPosts\tetas tamaño cabeza enano.PNG" />
+    <Content Include="resources\imagesPosts\uwu.png" />
+    <Content Include="resources\imagesPosts\XD.PNG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\fontIcons\Flaticon.eot" />

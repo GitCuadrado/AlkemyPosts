@@ -11,6 +11,7 @@ namespace AlkemyPOSTS.Models.Post.CrearPost
         public string TITLE { get; set; }
         public string CATEGORIA { get; set; }
         public string FECHA_CREACION { get; set; } 
-        public HttpPostedFileBase IMAGEN { get; set; }
+        public string IMAGEN { get; set; }
+        public int ESTADO { get; set; }
     }
 }

@@ -25,60 +25,30 @@ namespace AlkemyPOSTS.DataAccess
         public static List<PostItemPreview> GetPostsPreview()
         {
 
-            string sql = @"SELECT ID,TITLE,CATEGORIA,FECHA_CREACION FROM POST";
-            List<PostItemPreview> response = new List<PostItemPreview>();
-
-            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
-            {
-                response = cnn.Query<PostItemPreview>(sql).ToList();
-
-            }
-            return response;
+            string sql = @"SELECT ID,TITLE,CATEGORIA,FECHA_CREACION FROM POST WHERE ESTADO = 1";
+            return ConexionDB.GetList<PostItemPreview>(sql);
+           
         }
         public static ObtenerPostResponse ObtenerPost(ObtenerPostImportModel model)
         {
-            string sql = @"SELECT ID,TITLE,CONTENT,CATEGORIA,FECHA_CREACION FROM POST WHERE ID = @ID";
-            ObtenerPostResponse response = new ObtenerPostResponse();
-
-            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
-            {
-                response = cnn.QuerySingle<ObtenerPostResponse>(sql,model);
-
-            }
-            return response;
+            string sql = @"SELECT ID,TITLE,CONTENT,CATEGORIA,FECHA_CREACION,IMAGEN FROM POST WHERE ID = @ID AND ESTADO = 1";
+            return ConexionDB.Get<ObtenerPostResponse>(sql, model);
         }
         public static int EliminarPost(EliminarPostImportModel model)
         {
-            string sql = @"DELETE FROM POST WHERE ID = @ID";
-            int response = 0;
-            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
-            {
-                response = cnn.Execute(sql,model);
-
-            }
-            return response;
+            //string sql = @"DELETE FROM POST WHERE ID = @ID";
+            string sql = @"UPDATE POST SET ESTADO = 0 WHERE ID = @ID";
+            return ConexionDB.Alternate(sql, model);
         }
         public static int ModificarPost(ModificarPostImportModel model)
         {
-            string sql = @"UPDATE POST SET TITLE = @TITLE,CONTENT = @CONTENT, CATEGORIA = @CATEGORIA WHERE ID = @ID";
-            int response = 0;
-            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
-            {
-                response = cnn.Execute(sql,model);
-
-            }
-            return response;
+            string sql = @"UPDATE POST SET TITLE = @TITLE,CONTENT = @CONTENT, CATEGORIA = @CATEGORIA,IMAGEN = @IMAGEN WHERE ID = @ID";
+            return ConexionDB.Alternate(sql, model);
         }
         public static int CrearPost(CrearPostImportModel model)
         {
-            string sql = @"INSERT INTO POST(TITLE,CONTENT,CATEGORIA,FECHA_CREACION) VALUES(@TITLE,@CONTENT,@CATEGORIA,@FECHA_CREACION)";
-            int response = 0;
-            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
-            {
-                response = cnn.Execute(sql,model);
-
-            }
-            return response;
+            string sql = @"INSERT INTO POST(TITLE,CONTENT,CATEGORIA,FECHA_CREACION,IMAGEN,ESTADO) VALUES(@TITLE,@CONTENT,@CATEGORIA,@FECHA_CREACION,@IMAGEN,@ESTADO)";
+            return ConexionDB.Alternate(sql, model);
         }
 
     }

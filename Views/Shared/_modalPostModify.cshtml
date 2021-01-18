@@ -5,15 +5,14 @@
                 <p class="modal--title">Modificar Post</p>
             </div>
             <div class="modal-body">
-                <div class="modal-body__content">
+                <div class="modal-body__content edit">
                     <div class="inputGroup item">
                         <input id="titleMod" class="input" type="text" name="name" value="" required />
                         <label class="title">Titulo...</label>
-
+                        <p>*obligatorio</p>
                     </div>
                     <div class="inputGroup item">
                         <select id="selectCatMod" class="input">
-                            <option value="" disabled selected>Categoria...</option>
                             <option value="Anuncio">Anuncio</option>
                             <option value="Discusion">Discusion</option>
                             <option value="Memes">Memes</option>
@@ -22,12 +21,22 @@
                     <div class="inputGroup item">
                         <textarea id="contMod" class="input" rows="10" name="comment" cols="40" required></textarea>
                         <label class="title">Contenido...</label>
+                        <p>*obligatorio</p>
+                    </div>
+                    <div class="postImgContainer Mod item">
 
+                    </div>
+
+                    <div class="item">
+                        <label for="fileUploadMod" class="inputFile">
+                            <i class="flaticon-cloud-computing"></i> Cambiar Imagen...
+                        </label>
+                        <input type="file" name="fileUpload" id="fileUploadMod" size="23" /><br />
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btnDefaultLine">Cancelar</a>
+                <a class="btnDefaultLine closeModalEdit">Cancelar</a>
                 <a class="btnDefault btnModificar">Modificar</a>
             </div>
         </div>

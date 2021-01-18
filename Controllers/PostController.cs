@@ -78,36 +78,38 @@ namespace AlkemyPOSTS.Controllers
                 MaxJsonLength = int.MaxValue
             };
         }
-        //public JsonResult UploadImg()
-        //{
-        //    HttpPostedFileBase file = Request.Files[0];
-        //    try
-        //    {
+        public JsonResult UploadImg()
+        {
+            HttpPostedFileBase file = Request.Files[0];
+
+            try
+            {
                 
-        //        string path = Server.MapPath("~/resources/imagesPosts/");
-        //        if (!Directory.Exists(path))
-        //        {
-        //            Directory.CreateDirectory(path);
-        //        }
-        //        file.SaveAs(path + Path.GetFileName(file.FileName));
-        //    }
-        //    catch (Exception e)
-        //    {
+                string path = Server.MapPath("~/resources/imagesPosts/");
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+                file.SaveAs(path + Path.GetFileName(file.FileName));
+            }
+            catch (Exception e)
+            {
 
-        //        return new JsonResult()
-        //        {
-        //            Data = e.Message,
-        //            JsonRequestBehavior = JsonRequestBehavior.AllowGet,
-        //            MaxJsonLength = int.MaxValue
-        //        };
-        //    }
+                return new JsonResult()
+                {
+                    Data = e,
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+                    MaxJsonLength = int.MaxValue
+                };
+            }
+          
 
-        //    return new JsonResult()
-        //    {
-        //        Data = file.FileName,
-        //        JsonRequestBehavior = JsonRequestBehavior.AllowGet,
-        //        MaxJsonLength = int.MaxValue
-        //    };
-        //}
+            return new JsonResult()
+            {
+                Data = file.FileName,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+                MaxJsonLength = int.MaxValue
+            };
+        }
     }
 }

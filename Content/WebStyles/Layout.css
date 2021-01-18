@@ -33,16 +33,21 @@ p {
     width:100%;
     height:100%;
     display:flex;
-    justify-content:center;
+    justify-content:left;
     align-items:center;
+    position:relative;
 }
-.nav-bar__buttons {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .nav-bar__search > i {
+        position:absolute;
+        padding-left:1rem;
+    }
+    .nav-bar__buttons {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .nav-bar__buttons > a {
         height: 70%;
         border-radius: 2rem;
@@ -72,7 +77,7 @@ p {
     max-width: 100%;
     outline: none;
     font-size: 1.4rem;
-    padding: 0 1rem;
+    padding: 0 1rem 0 3.5rem;
     border: 1px solid #e5e5e5;
     background-color: #f6f7f8;
     border-radius: .3rem;
@@ -222,13 +227,26 @@ p {
     margin:0;
     font-weight:500;
 }
-.modal-body__content {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:auto auto auto;
-    grid-column-gap:2rem;
-    grid-row-gap:2rem;
+.inputGroup > p {
+    position:absolute;
+    right:0;
+    bottom:-1.3rem;
+    color:#52c0f7;
+    opacity:0;
 }
+.modal-body__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+}
+    .modal-body__content.add {
+        grid-template-rows: auto auto auto auto;
+    }
+    .modal-body__content.edit {
+        grid-template-rows: auto auto auto auto auto;
+    }
     .modal-body__content > .item:nth-child(1) {
         grid-column:1/3;
         grid-row:1/2;
@@ -240,6 +258,18 @@ p {
     .modal-body__content > .item:nth-child(3) {
         grid-column:1/3;
         grid-row:3/4;
+    }
+    .modal-body__content.add > .item:nth-child(4) {
+        grid-column:1/3;
+        grid-row:4/5;
+    } 
+    .modal-body__content.edit > .item:nth-child(4) {
+        grid-column:1/3;
+        grid-row:4/5;
+    }
+    .modal-body__content.edit > .item:nth-child(5) {
+        grid-column: 1/3;
+        grid-row: 5/6;
     }
 .modal--title {
     font-size:3rem;
@@ -326,6 +356,35 @@ p {
     padding-left: 2rem;
     width: 100%;
     height: auto;
+}
+    .postImgContainer.Mod {
+        padding:0;
+    }
+    .postImgContainer > img {
+        width: 100%;
+        height: auto;
+    }
+.inputFile {
+    padding:1rem 2rem;
+    background-color:#52c0f7;
+    color:#fff;
+    cursor:pointer;
+    border-radius:3rem;
+    font-weight:400;
+    font-size:1.4rem;
+    margin:0;
+    transition:.3s;
+    transition-timing-function:ease;
+}
+    .inputFile:hover {
+        background-color: #7ccdf6;
+    }
+input[type="file"] {
+    display: none;
+}
+.post-content__footer {
+    display:grid;
+    grid-template-columns:1fr 1fr;
 }
 @media screen and (max-width: 600px) {
     .nav-bar {

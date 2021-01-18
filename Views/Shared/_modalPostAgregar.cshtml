@@ -5,35 +5,40 @@
                 <p class="modal--title">Crear Post</p>
             </div>
             <div class="modal-body">
-                <div class="modal-body__content">
+                <div class="modal-body__content add">
                     <div class="inputGroup item">
-                        <input id="title" class="input" type="text" name="name" value="" required/>
+                        <input id="title" class="input" type="text" name="name" value="" required />
                         <label class="title">Titulo...</label>
-
+                        <p>*obligatorio</p>
                     </div>
                     <div class="inputGroup item">
                         <select id="selectCat" class="input">
-                            <option value="" disabled selected>Categoria...</option>
-                            <option value="Anuncio">Anuncio</option>
+                            <option value="Anuncio" selected>Anuncio</option>
                             <option value="Discusion">Discusion</option>
                             <option value="Memes">Memes</option>
                         </select>
+                        <p>*obligatorio</p>
                     </div>
                     <div class="inputGroup item">
                         <textarea id="cont" class="input" rows="10" name="comment" cols="40" required></textarea>
                         <label class="title">Contenido...</label>
-
+                        <p>*obligatorio</p>
                     </div>
-                    @*<form id="upload" enctype="multipart/form-data" action="@Url.Action("UploadImg", "Post")" method="POST">
+                    <div class="item">
+                        <label for="fileUpload" class="inputFile">
+                            <i class="flaticon-cloud-computing"></i> Subir Imagen...
+                        </label>
                         <input type="file" name="fileUpload" id="fileUpload" size="23" /><br />
-                        <button>Upload!</button>
-                    </form>*@
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btnDefaultLine">Cancelar</a>
+                <a class="btnDefaultLine closeModalAgregar">Cancelar</a>
                 <a class="btnDefault btnAgregar">Agregar</a>
             </div>
         </div>
     </div>
 </div>
+
+
+
